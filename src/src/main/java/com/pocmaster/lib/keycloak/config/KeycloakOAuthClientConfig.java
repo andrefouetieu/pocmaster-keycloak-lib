@@ -40,6 +40,7 @@ public class KeycloakOAuthClientConfig {
     public OAuth2AuthorizedClientManager authorizedClientManager() {
         OAuth2AuthorizedClientProvider authorizedClientProvider = OAuth2AuthorizedClientProviderBuilder.builder()
                 .clientCredentials()
+                .refreshToken()
                 .build();
 
         AuthorizedClientServiceOAuth2AuthorizedClientManager authorizedClientManager =
