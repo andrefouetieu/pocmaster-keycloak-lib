@@ -1,0 +1,17 @@
+jwt:
+  auth:
+    converter:
+      resource-roles:  ${api.keycloak.realm}-roles
+      principle-attribute: preferred_username
+
+
+api:
+  keycloak:
+    host:
+    port: 80
+    baseurl:
+    client_id: gestcourrier-client
+    client_secret:
+    password:
+    realm:
+    username:

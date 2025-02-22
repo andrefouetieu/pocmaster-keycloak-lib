@@ -1,0 +1,18 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            authorization-grant-type: client_credentials
+            client-id: ${kc.client-id}
+            client-secret: ${kc.client-secret}
+        provider:
+          keycloak:
+            token-uri: ${kc.host}/realms/${kc.realm}/protocol/openid-connect/token
+
+  oauth2:
+    resourceserver:
+      jwt:
+        issuer-uri: ${kc.host}/realms/${kc.realm}
+        jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
